@@ -39,7 +39,7 @@ class GenerateOverviewTask extends DefaultTask {
     @PathSensitive(PathSensitivity.RELATIVE)
     @InputFiles FileCollection srcDirs
 
-    @PathSensitive(PathSensitivity.RELATIVE)
+    //@PathSensitive(PathSensitivity.RELATIVE)
     @OutputDirectory File destDir
 
     @Input String pattern

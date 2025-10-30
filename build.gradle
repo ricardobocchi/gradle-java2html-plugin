@@ -1,18 +1,18 @@
 plugins {
-    id 'com.gradle.build-scan' version '1.16'
+    //id 'com.gradle.build-scan' version '1.16'
     id 'groovy'
     id 'maven-publish'
     id 'java-gradle-plugin'
     id 'com.jfrog.bintray' version '1.8.4'
 }
 
-buildScan {
-    termsOfServiceUrl   = 'https://gradle.com/terms-of-service'
-    termsOfServiceAgree = 'yes'
-}
+//buildScan {
+//    termsOfServiceUrl   = 'https://gradle.com/terms-of-service'
+//    termsOfServiceAgree = 'yes'
+//}
 
 group = 'com.bmuschko'
-version = '2.0.2'
+version = '2.0.4'
 
 repositories {
     mavenCentral()
@@ -32,20 +32,20 @@ jar {
     }
 }
 
-task sourcesJar(type: Jar) {
-    classifier 'sources'
+tasks.register('sourcesJar', Jar) {
+    archiveClassifier.set('sources')
     from sourceSets.main.allSource
 }
 
-task groovydocJar(type: Jar) {
-    dependsOn groovydoc
-    classifier 'groovydoc'
+tasks.register('groovydocJar', Jar) {
+    dependsOn 'groovydoc'
+    archiveClassifier.set('groovydoc')
     from groovydoc.destinationDir
 }
 
-task javadocJar(type: Jar) {
-    dependsOn javadoc
-    classifier 'javadoc'
+tasks.register('javadocJar', Jar) {
+    dependsOn 'javadoc'
+    archiveClassifier.set('javadoc')
     from javadoc.destinationDir
 }
 

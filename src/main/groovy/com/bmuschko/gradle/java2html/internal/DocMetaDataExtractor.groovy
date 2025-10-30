@@ -39,7 +39,7 @@ class DocMetaDataExtractor {
 
         htmlFilenames.each {
             String relativePathClassFilename = getRelativeClassFilename(it, srcDirs)
-            String className = relativePathClassFilename.substring(relativePathClassFilename.lastIndexOf(FILE_SEPARATOR) + 1, relativePathClassFilename.indexOf('.'))
+            String className = relativePathClassFilename.substring(relativePathClassFilename.lastIndexOf(FILE_SEPARATOR) + 1, relativePathClassFilename.lastIndexOf('.'))
             docClasses << new DocClass(link: relativePathClassFilename, name: className)
         }
 

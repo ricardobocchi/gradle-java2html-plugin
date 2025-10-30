@@ -1,0 +1,10 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()   // portal oficial de plugins Gradle
+        mavenCentral()         // caso o plugin esteja no Maven Central
+        mavenLocal()           // plugins locais
+        maven {
+            url = 'https://groovy.jfrog.io/artifactory/libs-release/'
+        }
+    }
+}

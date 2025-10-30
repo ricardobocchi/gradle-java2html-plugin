@@ -21,6 +21,7 @@ import org.gradle.api.tasks.CacheableTask
 import org.gradle.api.tasks.Classpath
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFiles
+import org.gradle.api.tasks.Internal
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.PathSensitive
 import org.gradle.api.tasks.PathSensitivity
@@ -33,13 +34,12 @@ import org.gradle.api.tasks.TaskAction
  */
 @CacheableTask
 class ConvertCodeTask extends DefaultTask {
-    @PathSensitive(PathSensitivity.RELATIVE)
+    //@PathSensitive(PathSensitivity.RELATIVE)
     @Classpath FileCollection classpath
 
     @PathSensitive(PathSensitivity.RELATIVE)
     @InputFiles FileCollection srcDirs
 
-    @PathSensitive(PathSensitivity.RELATIVE)
     @OutputDirectory File destDir
 
     @Input String includes
